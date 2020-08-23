@@ -107,7 +107,7 @@ app.get("/posts/:postId", function(req,res){
 
   //       const storedId = post._id;        
     
-  //       if(requestedId === storedId){
+  //       if(requestedId === storedId) {
   //         res.render("post", {
   //           title : post.postTitle,
   //           body : post.postContent
