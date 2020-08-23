@@ -1,0 +1,14 @@
+<%-include("partials/header")-%>
+
+<h1>Home</h1>
+
+<p><%= firstHomeContent %></p>
+
+<% console.log(postsArray); %> 
+
+<%postsArray.forEach(function(post){%>
+    <h1><%=post.postTitle%></h1>
+    <p><%=post.postContent.slice(0,100)+" ... "%><a href="/posts/<%=post._id%>" target="_blank">Read More</a></p>
+<%});%>
+
+<%-include("partials/footer")-%>
