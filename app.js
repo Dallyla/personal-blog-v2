@@ -88,7 +88,7 @@ app.post("/compose", function(req, res) {
 //post route
 app.get("/posts/:postId", function(req,res){
   const requestedId = req.params.postId;   
-  
+    
   Post.findOne({_id: requestedId}, function(err, post){
     if(!err){
       res.render("post", {
@@ -97,39 +97,44 @@ app.get("/posts/:postId", function(req,res){
       });
     }
   });
+  
+});
+
 
   // Post.find(function(err, posts){
-
+    
   //   if(err){
   //     console.log(err);
   //   } else{
   //     posts.forEach(function(post){
 
   //       const storedId = post._id;        
-    
-  //       if(requestedId === storedId) {
+        
+  //       var n = requestedId.localeCompare(storedId);
+
+  //       if(n === 0){
   //         res.render("post", {
   //           title : post.postTitle,
   //           body : post.postContent
   //         });
   //       }
+        
   //     }); 
-  //   }
-
+  //   }   
     
   // });
-
-  
-  
-});
-
-
-
-
-
 
 
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
 });
+
+
+
+
+
+
+
+
+
